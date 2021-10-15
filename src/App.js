@@ -66,7 +66,7 @@ export default function App() {
             </div>
             <p id="openSourceLine">
                 <a
-                    href="https://github.com/Egleta/weather-app"
+                    href="https://github.com/Egleta/weather-react"
                     id="openSourceLink"
                     target="_blank"
                     rel="noopener noreferrer"
