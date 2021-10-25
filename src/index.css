@@ -1,3 +1,95 @@
 body {
     font-family: "Poppins", sans-serif;
 }
+
+button {
+    border: 0;
+    background: transparent;
+}
+
+.card {
+    margin: 50px 0 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #292358;
+    border-radius: 18px;
+    width: 700px;
+}
+.card-title {
+    color: #fcf1fb;
+}
+.card-subtitle {
+    color: #6d90db;
+}
+.iconsCurrently {
+    font-size: 50px;
+    color: #6dd8d8;
+}
+.smallIconsForecast {
+    width: 55px;
+}
+#time {
+    color: #6d90db;
+    font-size: 15px;
+}
+
+#currentTemperatureBig {
+    font-size: 50px;
+    color: #fcf1fb;
+}
+#CF {
+    font-size: 20px;
+    color: #fcf1fb;
+    vertical-align: 20px;
+}
+#currentC,
+#currentF {
+    text-decoration: none;
+    color: #fcf1fb;
+    transition: all 200ms ease-in-out;
+}
+#currentC:hover,
+#currentF:hover,
+#currentC.selected,
+#currentF.selected {
+    color: #09d0cf;
+    font-weight: 600;
+    font-size: 23px;
+}
+
+#openSourceLine {
+    font-size: 14px;
+}
+#openSourceLink {
+    text-decoration: none;
+}
+
+#weatherConditionsCurrently {
+    display: inline-block;
+}
+#weatherConditionsCurrently:first-letter {
+    text-transform: uppercase;
+}
+
+.mainWeatherInfo {
+    font-size: 15px;
+    color: #6d90db;
+}
+
+.smallC {
+    display: none;
+}
+
+.cSelected .smallC {
+    display: inline;
+}
+.cSelected .smallF {
+    display: none;
+}
+
+span.smallTextsBottom {
+    color: #fcf1fb;
+}
+.smallConditions {
+    font-size: 12px;
+    color: #6d90db;
+}

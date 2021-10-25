@@ -1,0 +1,33 @@
+.Globe {
+    position: relative;
+    margin: 0 auto;
+    width: 230px;
+}
+
+.Globe .animation {
+    display: block;
+    width: 100%;
+}
+
+.Globe .middleLayer {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgb(0 0 0 / 47%);
+    backdrop-filter: blur(5px);
+    padding: 17px;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: all 300ms ease-in-out;
+}
+.Globe .middleLayer:hover {
+    opacity: 1;
+}
+
+.Globe .globeText {
+    color: white;
+    margin: 0 auto;
+}

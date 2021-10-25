@@ -1,4 +1,5 @@
 import React from "react";
+import "./SearchForm.css";
 
 export default function SearchForm() {
     return (
@@ -7,12 +8,7 @@ export default function SearchForm() {
                 <div className="row">
                     <div className="col-9">
                         <div className="mb-3">
-                            <input
-                                type="text"
-                                className="form-control"
-                                id="exampleInputEmail1"
-                                placeholder="Enter your city"
-                            />
+                            <input type="text" className="form-control" placeholder="Enter your city" />
                         </div>
                     </div>
 
