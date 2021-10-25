@@ -1,5 +1,5 @@
 import React from "react";
 
 export default function Forecast() {
-    return <div>Forecast missing</div>;
+    return <div className="Forecast">Forecast missing</div>;
 }

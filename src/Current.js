@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Current() {
     return (
-        <div>
+        <div className="Current">
             <h5 className="card-subtitle mb-0 mt-2">
                 Currently in
                 <strong id="city">–</strong>:

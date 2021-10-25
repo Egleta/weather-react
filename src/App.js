@@ -1,9 +1,7 @@
 import React from "react";
 import Time from "./Time";
-import SearchForm from "./SearchForm";
-import Current from "./Current";
-import Globe from "./Globe";
-import Forecast from "./Forecast";
+import Weather from "./Weather";
+
 
 export default function App() {
     return (
@@ -18,18 +16,8 @@ export default function App() {
                             <Time />
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col">
-                            <SearchForm />
-                            <Current />
-                        </div>
-                        <div className="col pt-4">
-                            <Globe />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <Forecast />
-                    </div>
+                    <Weather/>
+                    
                 </div>
             </div>
             <p id="openSourceLine">
