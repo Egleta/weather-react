@@ -3,12 +3,17 @@ import axios from "axios";
 import Current from "./Current";
 import Globe from "./Globe";
 import Forecast from "./Forecast";
+import "./Weather.css";
 
 export default function Weather() {
     const apiKey = "a85784d2dae7d5a007ca536ecd5baadb";
 
+    let [loaded, setLoaded] = useState(false);
     let [currentWeatherData, setCurrentWeatherData] = useState("");
     //let [forecast, setForecast] = useState("");
+
+    //const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=Stockholm&appid=${apiKey}&units=metric`;
+    //axios.get(apiURL).then(handleResponse);
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -19,6 +24,8 @@ export default function Weather() {
     }
 
     function handleResponse(response) {
+        setLoaded(true);
+
         setCurrentWeatherData({
             city: response.data.name,
             temperature: response.data.main.temp,

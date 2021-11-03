@@ -1,4 +1,5 @@
 import React from "react";
+import TemperatureConversion from "./TemperatureConversion";
 
 export default function Current(props) {
     return (
@@ -13,15 +14,8 @@ export default function Current(props) {
                         <div className="col-4 p-0">
                             <img alt="Weather conditions" id="bigIcon" src={props.weather.icon} />
                         </div>
-                        <div className="col-6 ps-0">
-                            <span id="currentTemperatureBig">{Math.round(props.weather.temperature)}</span>
-                            <span id="CF">
-                                <button id="currentC" className="selected">
-                                    °C
-                                </button>
-                                |<button id="currentF">°F</button>
-                            </span>
-                        </div>
+
+                        <TemperatureConversion temperature={props.weather.temperature} />
                     </div>
                     <div className="mainWeatherInfo">
                         <div>
