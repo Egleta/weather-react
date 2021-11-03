@@ -4,9 +4,9 @@ import "./Time.css";
 export default function Time() {
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    let now = new Date();
-    
-const [dateState, setDateState] = useState(new Date());
+
+    const [now, setDateState] = useState(new Date());
+
     useEffect(() => {
         setInterval(() => setDateState(new Date()), 1000);
     }, []);

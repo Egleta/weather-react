@@ -8,7 +8,7 @@ import "./Weather.css";
 export default function Weather() {
     const apiKey = "a85784d2dae7d5a007ca536ecd5baadb";
 
-    let [loaded, setLoaded] = useState(false);
+    //let [loaded, setLoaded] = useState(false);
     let [currentWeatherData, setCurrentWeatherData] = useState("");
     //let [forecast, setForecast] = useState("");
 
@@ -24,7 +24,7 @@ export default function Weather() {
     }
 
     function handleResponse(response) {
-        setLoaded(true);
+        //setLoaded(true);
 
         setCurrentWeatherData({
             city: response.data.name,
