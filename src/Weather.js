@@ -6,26 +6,21 @@ import Forecast from "./Forecast";
 import "./Weather.css";
 
 export default function Weather() {
-    const apiKey = "a85784d2dae7d5a007ca536ecd5baadb";
+    const apiKey = "3c2c492e0ef332b3d7d85ce13f359f65";
 
-    //let [loaded, setLoaded] = useState(false);
+    let [loaded, setLoaded] = useState(false);
     let [currentWeatherData, setCurrentWeatherData] = useState("");
-    //let [forecast, setForecast] = useState("");
-
-    //const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=Stockholm&appid=${apiKey}&units=metric`;
-    //axios.get(apiURL).then(handleResponse);
+    let [forecastData, setForecastData] = useState([]);
 
     function handleSubmit(event) {
         event.preventDefault();
 
         const city = event.target.city.value;
         const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-        axios.get(apiURL).then(handleResponse);
+        axios.get(apiURL).then(handleCityResponse);
     }
 
-    function handleResponse(response) {
-        //setLoaded(true);
-
+    function handleCityResponse(response) {
         setCurrentWeatherData({
             city: response.data.name,
             temperature: response.data.main.temp,
@@ -42,6 +37,19 @@ export default function Weather() {
             }
             return "Day";
         }
+
+        getForecast(response.data.coord);
+
+        setLoaded(true);
+    }
+
+    function getForecast(coordinates) {
+        const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(setForecast);
+    }
+
+    function setForecast(response) {
+        setForecastData(response.data.daily.slice(1, 6));
     }
 
     return (
@@ -70,15 +78,13 @@ export default function Weather() {
                             </div>
                         </form>
                     </div>
-                    <Current weather={currentWeatherData} />
+                    {loaded && <Current weather={currentWeatherData} />}
                 </div>
                 <div className="col pt-4">
                     <Globe />
                 </div>
             </div>
-            <div className="row">
-                <Forecast />
-            </div>
+            <div className="row">{loaded && forecastData !== [] && <Forecast forecast={forecastData} />}</div>
         </div>
     );
 }

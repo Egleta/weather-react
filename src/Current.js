@@ -14,7 +14,6 @@ export default function Current(props) {
                         <div className="col-4 p-0">
                             <img alt="Weather conditions" id="bigIcon" src={props.weather.icon} />
                         </div>
-
                         <TemperatureConversion temperature={props.weather.temperature} />
                     </div>
                     <div className="mainWeatherInfo">

@@ -76,14 +76,7 @@ button {
 }
 
 .smallC {
-    display: none;
-}
-
-.cSelected .smallC {
     display: inline;
-}
-.cSelected .smallF {
-    display: none;
 }
 
 span.smallTextsBottom {
